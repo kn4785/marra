@@ -8,6 +8,7 @@
       </ion-title>
     </ion-toolbar>
   
+    <!-- tool bar holds the bottons for the oninfomortial -->
     <ion-toolbar>
         <ion-tabs>
             <ion-tab-bar color = "light" slot="bottom">
@@ -35,6 +36,7 @@
   
       <ion-grid>
           <ion-row size = "3">
+            <!-- iterate through movies array results from API and set to movie, route to where ever using movie-->
            <ion-col *ngFor="let movie of movies.results" [routerLink]="'/movie-info/' + movie.id" routerDirection="forward">
                <ion-item lines = "none">
                <ion-card color = "light" >

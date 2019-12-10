@@ -12,6 +12,7 @@
     <ion-toolbar>
         <ion-tabs>
             <ion-tab-bar color = "light" slot="bottom">
+              <!-- toolbar containing icons and mini projects -->
               <ion-tab-button tab="watchlist">
                 <ion-icon name="eye"></ion-icon>
                 <ion-label>Watch List</ion-label>
@@ -32,6 +33,7 @@
   
   </ion-header>
   
+    <!-- using itemid to get this item rather than image  -->
   <ion-content *ngIf="items">
       <ion-list *ngFor="let item of items">
           <ion-item-sliding side = "start">
@@ -40,7 +42,7 @@
           {{item.title}}
         </ion-item>
   
-  
+        <!-- removine item from wachted list -->
         <ion-item-options side = "start">
             <ion-item-option color="primary">
               <ion-button (click) = "removefromList(item);">

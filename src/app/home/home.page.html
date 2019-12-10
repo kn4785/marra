@@ -32,37 +32,23 @@
 </ion-header>
 
 <ion-content>
-
-    <!--
-  <ion-row *ngFor="let movie of movies.results; index as i">
-    <ion-col *ngIf="i%3 === 0">
-      <div><img src = "https://image.tmdb.org/t/p/w185_and_h278_bestv2{{movie.poster_path}}"/></div>
-    </ion-col>
-     <ion-col *ngIf="i%3 === 1">
-      <div> <div><img src = "https://image.tmdb.org/t/p/w185_and_h278_bestv2{{movie.poster_path}}"/></div></div>
-    </ion-col>
-    <ion-col *ngIf="i%3 === 2">
-      <div> <div><img src = "https://image.tmdb.org/t/p/w185_and_h278_bestv2{{movie.poster_path}}"/></div></div>
-    </ion-col> 
-  </ion-row>-->
-
    <!-- <ion-button color="primary" (click)= "popularMovies()">Refresh</ion-button> -->
    <ion-grid>
    <ion-row size = "3">
+     <!-- iterate throw the movies array and set it equal to objet movies, routerLink to navigate to details page-->
     <ion-col *ngFor="let movie of movies.results" [routerLink]="'/movie-info/' + movie.id" routerDirection="forward">
         <ion-item lines = "none" >
         <ion-card color = "light" >
-         <!-- <ion-item>-->
+         <!-- get image using API -->
             <img src = "https://image.tmdb.org/t/p/w185_and_h278_bestv2{{movie.poster_path}}"/>
             <ion-card-header>
               <ion-card-subtitle>Movie Title</ion-card-subtitle>
+              <!-- load in data -->
               <ion-card-title>{{movie.title}}</ion-card-title>
             </ion-card-header>
-         <!-- </ion-item> -->
           </ion-card>
         </ion-item>
-          </ion-col>
+      </ion-col>
   </ion-row>
 </ion-grid>
-  
 </ion-content>

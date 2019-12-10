@@ -35,6 +35,7 @@
   
       <ion-grid>
           <ion-row size = "3">
+            <!-- again, iterate through array and set objects to equal movie and from movie obtain title to display, id to route and search-->
            <ion-col *ngFor="let movie of movies.results" [routerLink]="'/movie-info/' + movie.id" routerDirection="forward">
                <ion-item lines = "none">
                <ion-card color = "light" >

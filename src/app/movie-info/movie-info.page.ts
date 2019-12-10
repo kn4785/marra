@@ -47,26 +47,11 @@ export class MovieInfoPage implements OnInit {
             // Console log the json object
               console.log(json);
               return json;
-            //document.getElementById("info").innerHTML =  "City & State";
             });
 
   }
 
-  /*popularMovies(){ 
-    const BASE_URL = 'https://api.themoviedb.org/3/movie/popular?api_key=';
-    const KEY = 'a876ebf5d22c0c6724d30bfac73a198d';
-    const LANG = '&language=en-US';
-    const PAGE = '&page=1'; 
-
-    const URL = BASE_URL + KEY + LANG + PAGE; 
-
-    var parent = this;
-    this.makeRequest(URL).then(function(json) {
-      parent.updateMovies(json);
-    });
-
-  } */
-
+  /* gets movie info use the Movie DB api */
   modalMovieInfo(){
 
     const BASE_URL = 'https://api.themoviedb.org/3/movie/';
@@ -81,7 +66,7 @@ export class MovieInfoPage implements OnInit {
     });
   }
 
-
+/*adding to list has three options, three buttons, swip to reveal a delete*/
   addtoList(listname, movie){
     if(listname == "favorites") {
       this.globals.favorites.push(movie)

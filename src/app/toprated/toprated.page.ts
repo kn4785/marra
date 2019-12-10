@@ -35,6 +35,7 @@ export class TopratedPage {
 
   }
 
+  //build API call to return top rated movies
   topRatedMovies(){ 
     const BASE_URL = 'https://api.themoviedb.org/3/movie/top_rated?api_key=';
     const KEY = 'a876ebf5d22c0c6724d30bfac73a198d';
@@ -42,7 +43,8 @@ export class TopratedPage {
     const PAGE = '&page=1'; 
 
     const URL = BASE_URL + KEY + LANG + PAGE; 
-
+  
+    //delete at selected index movie title 
     var parent = this;
     this.makeRequest(URL).then(function(json) {
       parent.updateMovies(json);

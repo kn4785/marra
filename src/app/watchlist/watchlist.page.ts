@@ -19,6 +19,7 @@ export class WatchlistPage implements OnInit {
     console.log(this.items)
   }
 
+  /* removie movie from specified list */ 
   removefromList(movie){
     console.log('starting delete method');
     for(var i = 0; i < this.globals.watchlist.length; i++) {

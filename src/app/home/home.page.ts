@@ -6,6 +6,7 @@ import { NavController } from '@ionic/angular';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+//class popularMovies in constructor to run right away on app open 
 export class HomePage {
   constructor(public nav: NavController) {
     this.popularMovies();
@@ -30,11 +31,11 @@ export class HomePage {
             }).then(function(json) {
             // Console log the json object
               return json;
-            //document.getElementById("info").innerHTML =  "City & State";
             });
 
   }
 
+  //building API call to get popular movies out now
   popularMovies(){ 
     const BASE_URL = 'https://api.themoviedb.org/3/movie/popular?api_key=';
     const KEY = 'a876ebf5d22c0c6724d30bfac73a198d';

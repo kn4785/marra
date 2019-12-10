@@ -8,6 +8,7 @@
     </ion-title>
   </ion-toolbar>
 
+  <!-- same tool bar holding the tab buttons -->
   <ion-toolbar>
       <ion-tabs>
           <ion-tab-bar color = "light" slot="bottom">
@@ -28,10 +29,11 @@
           </ion-tab-bar>
         </ion-tabs>
       </ion-toolbar>
-
 </ion-header>
 
+  <!-- check if everything is items  -->
 <ion-content *ngIf="items">
+  <!-- removine item from favorites list -->
     <ion-list *ngFor="let item of items">
         <ion-item-sliding side = "start">
       <ion-item [routerLink]="'/movie-info/' + item.id" routerDirection="forward">
@@ -39,7 +41,7 @@
         {{item.title}}
       </ion-item>
 
-
+<!-- removine item from favorites list -->
       <ion-item-options side = "start">
           <ion-item-option color="primary">
             <ion-button (click) = "removefromList(item);">

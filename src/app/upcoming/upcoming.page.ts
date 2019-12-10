@@ -8,6 +8,7 @@ import { NavController } from '@ionic/angular';
 })
 export class UpcomingPage {
 
+  /* call upon landing at upcoming page */ 
   constructor(public nav: NavController) {
     this.upcomingMovies();
   }
@@ -36,6 +37,7 @@ export class UpcomingPage {
 
   }
 
+  /* API build URL in order to get upcoming movies that might've missed us*/ 
   upcomingMovies(){ 
     const BASE_URL = 'https://api.themoviedb.org/3/movie/upcoming?api_key=';
     const KEY = 'a876ebf5d22c0c6724d30bfac73a198d';

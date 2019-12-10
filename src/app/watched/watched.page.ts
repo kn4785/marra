@@ -19,6 +19,7 @@ export class WatchedPage implements OnInit {
     console.log(this.items)
   }
 
+  //remove movie from a list
   removefromList(movie){
     console.log('starting delete method');
     for(var i = 0; i < this.globals.watched.length; i++) {
