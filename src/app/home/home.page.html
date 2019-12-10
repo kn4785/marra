@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color = "primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home - Popular Movies
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar >
+      <ion-tabs>
+          <ion-tab-bar color = "light" slot="bottom">
+            <ion-tab-button tab="home">
+              <ion-icon  name="trending-up"></ion-icon>
+              <ion-label>Popular</ion-label>
+            </ion-tab-button>
+        
+            <ion-tab-button tab="upcoming">
+              <ion-icon name="timer"></ion-icon>
+              <ion-label>Upcoming</ion-label>
+            </ion-tab-button>
+        
+            <ion-tab-button tab="toprated">
+              <ion-icon name="star"></ion-icon>
+              <ion-label>Top Rated</ion-label>
+            </ion-tab-button>
+          </ion-tab-bar>
+        </ion-tabs>
+      </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+    <!--
+  <ion-row *ngFor="let movie of movies.results; index as i">
+    <ion-col *ngIf="i%3 === 0">
+      <div><img src = "https://image.tmdb.org/t/p/w185_and_h278_bestv2{{movie.poster_path}}"/></div>
+    </ion-col>
+     <ion-col *ngIf="i%3 === 1">
+      <div> <div><img src = "https://image.tmdb.org/t/p/w185_and_h278_bestv2{{movie.poster_path}}"/></div></div>
+    </ion-col>
+    <ion-col *ngIf="i%3 === 2">
+      <div> <div><img src = "https://image.tmdb.org/t/p/w185_and_h278_bestv2{{movie.poster_path}}"/></div></div>
+    </ion-col> 
+  </ion-row>-->
+
+   <!-- <ion-button color="primary" (click)= "popularMovies()">Refresh</ion-button> -->
+   <ion-grid>
+   <ion-row size = "3">
+    <ion-col *ngFor="let movie of movies.results" [routerLink]="'/movie-info/' + movie.id" routerDirection="forward">
+        <ion-item lines = "none" >
+        <ion-card color = "light" >
+         <!-- <ion-item>-->
+            <img src = "https://image.tmdb.org/t/p/w185_and_h278_bestv2{{movie.poster_path}}"/>
+            <ion-card-header>
+              <ion-card-subtitle>Movie Title</ion-card-subtitle>
+              <ion-card-title>{{movie.title}}</ion-card-title>
+            </ion-card-header>
+         <!-- </ion-item> -->
+          </ion-card>
+        </ion-item>
+          </ion-col>
+  </ion-row>
+</ion-grid>
+  
+</ion-content>

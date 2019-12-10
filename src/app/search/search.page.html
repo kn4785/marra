@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar color = "primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Search for Movies
+      </ion-title>
+    </ion-toolbar>
+  
+    <ion-toolbar color = "primary">
+        <ion-searchbar color = "light" (ionInput)="searchResults($event);" place holder = "Enter Movie Title" animated ></ion-searchbar>
+        <ion-button (click) = "searchRandomMovie()" slot="end" color="light" type="text">Random!</ion-button>
+        
+    </ion-toolbar>
+  
+  </ion-header>
+  
+  <ion-content>
+
+      <ion-grid>
+          <ion-row size = "3">
+           <ion-col *ngFor="let movie of movies.results" [routerLink]="'/movie-info/' + movie.id" routerDirection="forward">
+               <ion-item >
+               <ion-card color = "light" >
+                   <img src = "https://image.tmdb.org/t/p/w185_and_h278_bestv2{{movie.poster_path}}"/>
+                   <ion-card-header>
+                     <ion-card-subtitle>Movie Title</ion-card-subtitle>
+                     <ion-card-title>{{movie.title}}</ion-card-title>
+                   </ion-card-header>
+                 </ion-card>
+               </ion-item>
+                 </ion-col>
+         </ion-row>
+       </ion-grid>
+
+
+  </ion-content>

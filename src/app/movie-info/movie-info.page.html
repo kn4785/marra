@@ -1,0 +1,71 @@
+<ion-header translucent>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button text="Back" defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title color = "primary">Movie Details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content *ngIf="movie">
+    
+<img src = "https://image.tmdb.org/t/p/w533_and_h300_bestv2/{{movie.backdrop_path}}"/>
+<ion-item lines = "none">
+<ion-title text-center>{{movie.title}}</ion-title>
+</ion-item>
+        <ion-item>
+          Description: {{movie.overview}}
+        </ion-item> 
+
+        <ion-item-group>
+            <ion-item lines = "none">
+                <ion-label>Add to a List</ion-label>
+            </ion-item>
+          <ion-item-divider> 
+              <ion-button (click) = "addtoList('watchlist', movie)">
+                  <ion-icon slot="start" name="eye"></ion-icon>
+                  Watchlist
+                </ion-button>                  
+        
+              <ion-button (click) = "addtoList('favorites', movie)">
+                  <ion-icon slot= "start" name="heart"></ion-icon>
+                  Favorites
+                </ion-button>                  
+         
+              <ion-button (click) = "addtoList('watched', movie)">
+                  <ion-icon slot="start" name="checkbox-outline"></ion-icon>
+                  Watched
+                </ion-button>     
+            </ion-item-divider>    
+          </ion-item-group>         
+
+        <ion-item>
+            Movie Status: {{movie.status}}
+        </ion-item>
+
+        <ion-item>
+            Release Date: {{movie.release_date}}
+        </ion-item>
+
+        <ion-item>
+            Genres:&nbsp;
+            <p *ngFor = "let genre of movie.genres">
+                <ion-badge color="primary">{{genre.name}}</ion-badge>&nbsp;
+            </p>
+        </ion-item>
+
+        <ion-item>
+            Runtime: {{movie.runtime}} minutes 
+        </ion-item>
+
+        <ion-item> 
+        Rating: {{movie.vote_average}}/10
+      </ion-item>
+
+        <ion-item>
+            Revenue: ${{movie.revenue}}
+        </ion-item>
+      
+
+
+</ion-content>
